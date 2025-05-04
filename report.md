@@ -3,6 +3,8 @@
 ## Executive Summary
 
 This report analyzes the key factors that have influenced US home prices over the past 20 years. Through rigorous data collection, statistical analysis, and machine learning modeling, I have identified and ranked the primary drivers of national home price trends. The findings reveal that inflation, population growth, and unemployment rates have the strongest relationships with home prices, while supply-side factors like housing starts and building permits show significant short-term impacts through impulse response analysis.
+![factors](https://github.com/user-attachments/assets/d2fc5daf-2092-4799-8102-aa5ae1bcd04d)
+
 
 ## Phase I: Research & Data Collection
 
@@ -36,6 +38,7 @@ After extensive research, I identified the following key factors that influence 
 - **Price-to-Rent Ratio**: Early 2020s levels ~19.5% above fundamental value (Dallas Fed analysis)
 - **Locked-in Effect**: Higher interest rates caused homeowners to stay put, further restricting supply
 - **Housing Types**: Condos and urban markets saw larger swings in 2000s; suburban single-family homes dominated recent boom
+  ![home_llc_us_house_price graph](https://github.com/user-attachments/assets/c69facc9-80c9-4521-b288-31ad0818f4ba)
 
 ## Phase II: Dataset Generation
 
@@ -115,7 +118,43 @@ The generated dataset includes 244 monthly observations from February 2005 to Ma
 
 For each variable, I also calculated logarithmic values and percentage changes to facilitate time-series analysis.
 
+DatetimeIndex: 244 entries, 2005-02-01 to 2025-05-01
+Freq: MS
+Data columns (total 21 columns):
+ #   Column                   Non-Null Count  Dtype  
+---  ------                   --------------  -----  
+ 0   HomePriceIndex           244 non-null    float64
+ 1   Mortgage30YRate          244 non-null    float64
+ 2   UnemploymentRate         244 non-null    float64
+ 3   HousingStarts            244 non-null    float64
+ 4   BuildingPermits          244 non-null    float64
+ 5   CPI_AllItems             244 non-null    float64
+ 6   Population               244 non-null    float64
+ 7   log_HomePriceIndex       244 non-null    float64
+ 8   pctchg_HomePriceIndex    244 non-null    float64
+ 9   log_Mortgage30YRate      244 non-null    float64
+ 10  pctchg_Mortgage30YRate   244 non-null    float64
+ 11  log_UnemploymentRate     244 non-null    float64
+ 12  pctchg_UnemploymentRate  244 non-null    float64
+ 13  log_HousingStarts        244 non-null    float64
+ 14  pctchg_HousingStarts     244 non-null    float64
+ 15  log_BuildingPermits      244 non-null    float64
+ 16  pctchg_BuildingPermits   244 non-null    float64
+ 17  log_CPI_AllItems         244 non-null    float64
+ 18  pctchg_CPI_AllItems      244 non-null    float64
+ 19  log_Population           244 non-null    float64
+ 20  pctchg_Population        244 non-null    float64
+dtypes: float64(21)
+
 ## Phase III: Modeling & Analysis
+
+Target: House Price - (Corelation Analysis)
+![correlation_matrix](https://github.com/user-attachments/assets/89d525fa-1cc6-491f-9677-5e84838f60eb)
+
+Feature Importance
+====================
+![feature_importance](https://github.com/user-attachments/assets/f91b8066-1b0e-4309-a662-03926130045b)
+
 
 ### 1. Descriptive Statistics
 
@@ -153,7 +192,7 @@ I calculated summary statistics for all variables to understand their basic prop
 
 I visualized the Home Price Index trend over the 20-year period to identify key patterns and inflection points.
 
-[U.S. Home Price Index (2005-2025) - Chart Visualization]
+![home_price_trend](https://github.com/user-attachments/assets/ab482897-f7aa-41d6-b075-ef92fdf12750)
 
 ### 3. Stationarity Tests
 
@@ -213,6 +252,9 @@ I generated forecasts and evaluated model performance:
 - RMSE: 57.4350
 - MAPE: 17.42%
 
+  ![actual_vs_predicted](https://github.com/user-attachments/assets/81721f37-a9bc-4c9c-8ba9-c22143681443)
+
+
 *Inference*: The model captures the general trend in home prices but demonstrates some deviation from actual values, suggesting that while our identified factors are important, there may be additional influences on home price dynamics.
 
 ### 8. Impulse Response Analysis
@@ -232,6 +274,7 @@ To understand the impact of economic shocks, I conducted impulse response analys
 6. **pctchg_Mortgage30YRate** (cumulative impact: 0.0046)
 
 *Inference*: Supply-side factors (housing starts and building permits) demonstrate the strongest influence on home prices, followed by macroeconomic conditions (unemployment and inflation). This suggests that construction activity and general economic health are primary drivers of housing market dynamics.
+![impulse_responses](https://github.com/user-attachments/assets/f8862122-4bfd-46a6-a829-fa6536b5ad8c)
 
 ### 9. Machine Learning Model Results
 
@@ -261,6 +304,8 @@ To complement the time-series approach, I evaluated several machine learning mod
 *Inference*: The negative R² values suggest that these models struggle to outperform a simple mean-based prediction, indicating the complex and potentially non-stationary nature of housing market relationships. Ridge Regression performed marginally better than other approaches, with its coefficients highlighting the importance of mortgage rates and inflation.
 
 ## Phase IV: Comprehensive Ranking & Conclusion
+![predictors_vs_home_price](https://github.com/user-attachments/assets/6259b980-d655-4fc1-85ad-f18148ee97ec)
+
 
 ### Ranking of Factors Influencing U.S. Home Prices
 

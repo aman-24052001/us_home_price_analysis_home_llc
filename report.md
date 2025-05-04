@@ -119,32 +119,8 @@ The generated dataset includes 244 monthly observations from February 2005 to Ma
 For each variable, I also calculated logarithmic values and percentage changes to facilitate time-series analysis.
 
 DatetimeIndex: 244 entries, 2005-02-01 to 2025-05-01
-Freq: MS
-Data columns (total 21 columns):
- #   Column                   Non-Null Count  Dtype  
----  ------                   --------------  -----  
- 0   HomePriceIndex           244 non-null    float64
- 1   Mortgage30YRate          244 non-null    float64
- 2   UnemploymentRate         244 non-null    float64
- 3   HousingStarts            244 non-null    float64
- 4   BuildingPermits          244 non-null    float64
- 5   CPI_AllItems             244 non-null    float64
- 6   Population               244 non-null    float64
- 7   log_HomePriceIndex       244 non-null    float64
- 8   pctchg_HomePriceIndex    244 non-null    float64
- 9   log_Mortgage30YRate      244 non-null    float64
- 10  pctchg_Mortgage30YRate   244 non-null    float64
- 11  log_UnemploymentRate     244 non-null    float64
- 12  pctchg_UnemploymentRate  244 non-null    float64
- 13  log_HousingStarts        244 non-null    float64
- 14  pctchg_HousingStarts     244 non-null    float64
- 15  log_BuildingPermits      244 non-null    float64
- 16  pctchg_BuildingPermits   244 non-null    float64
- 17  log_CPI_AllItems         244 non-null    float64
- 18  pctchg_CPI_AllItems      244 non-null    float64
- 19  log_Population           244 non-null    float64
- 20  pctchg_Population        244 non-null    float64
-dtypes: float64(21)
+![image](https://github.com/user-attachments/assets/2edf1392-e094-421a-a76b-516fdbaa0a7d)
+
 
 ## Phase III: Modeling & Analysis
 

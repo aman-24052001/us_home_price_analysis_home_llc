@@ -118,7 +118,7 @@ The generated dataset includes 244 monthly observations from February 2005 to Ma
 
 For each variable, I also calculated logarithmic values and percentage changes to facilitate time-series analysis.
 
-DatetimeIndex: 244 entries, 2005-02-01 to 2025-05-01
+
 ![image](https://github.com/user-attachments/assets/2edf1392-e094-421a-a76b-516fdbaa0a7d)
 
 
